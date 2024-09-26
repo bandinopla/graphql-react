@@ -9,5 +9,5 @@ import React from "react";
  * @see [Gotcha explanation](https://github.com/CharlesStover/use-force-update/issues/18#issuecomment-554486618).
  */
 export default function useForceUpdate() {
-  return React.useReducer(() => Symbol(), Symbol())[1];
+  return ()=>React.useReducer(() => Symbol(), Symbol())[1](null);
 }
